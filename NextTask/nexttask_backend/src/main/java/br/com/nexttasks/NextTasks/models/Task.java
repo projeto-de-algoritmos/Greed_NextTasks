@@ -1,8 +1,14 @@
 package br.com.nexttasks.NextTasks.models;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 
-public class Task {
+public class Task implements Comparator<Task> {
+
+    @Override
+    public int compare(Task t1, Task t2) {
+        return t1.getDeadline().compareTo(t2.getDeadline());
+    }
 
     private String name;
 
@@ -13,6 +19,8 @@ public class Task {
     private LocalDate dateStart;
 
     private LocalDate dateFinish;
+
+    private Long lateness;
 
 
     public String getName() {
@@ -53,5 +61,13 @@ public class Task {
 
     public void setDateFinish(LocalDate dateFinish) {
         this.dateFinish = dateFinish;
+    }
+
+    public Long getLateness() {
+        return lateness;
+    }
+
+    public void setLateness(Long lateness) {
+        this.lateness = lateness;
     }
 }
