@@ -8,7 +8,12 @@ public class Task {
 
     private LocalDate deadline;
 
-    private Long daysToComplete;
+    private Integer daysToComplete;
+
+    private LocalDate dateStart;
+
+    private LocalDate dateFinish;
+
 
     public String getName() {
         return name;
@@ -26,11 +31,27 @@ public class Task {
         this.deadline = deadline;
     }
 
-    public Long getDaysToComplete() {
+    public Integer getDaysToComplete() {
         return daysToComplete;
     }
 
-    public void setDaysToComplete(Long daysToComplete) {
+    public void setDaysToComplete(Integer daysToComplete) {
         this.daysToComplete = daysToComplete;
+    }
+
+    public LocalDate getDateStart() {
+        return dateStart;
+    }
+
+    public void setDateStart(LocalDate dateStart) {
+        this.dateStart = dateStart;
+    }
+
+    public LocalDate getDateFinish() {
+        return dateFinish;
+    }
+
+    public void setDateFinish(LocalDate dateFinish) {
+        this.dateFinish = dateFinish;
     }
 }
