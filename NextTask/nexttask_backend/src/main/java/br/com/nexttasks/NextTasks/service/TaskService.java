@@ -1,12 +1,14 @@
 package br.com.nexttasks.NextTasks.service;
 
 import br.com.nexttasks.NextTasks.models.Task;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
+@Service
 public class TaskService{
 
     LocalDate currentDate = LocalDate.now();

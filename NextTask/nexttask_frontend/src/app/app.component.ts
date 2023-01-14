@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormsModule} from '@angular/forms'
+import {TaskService} from "./task.service";
 
 @Component({
   selector: 'app-root',
@@ -8,17 +9,29 @@ import {FormBuilder, FormsModule} from '@angular/forms'
 })
 export class AppComponent {
   public items = [];
+  public index: number = 0;
 
-  taskForm = this.formBuilder.group({
-    description: [''],
-    date: [''],
-    timeToComplete: ['']
+  task = this.formBuilder.group({
+    name: [''],
+    deadline: [''],
+    daysToComplete: ['']
   });
 
   public addToList() {
 
+      // @ts-ignore
+      this.items.push(this.task);
+      this.service.processTask(this.items);
+      // @ts-ignore
+      console.log(this.task.get('name').value);
   }
 
-  constructor(private formBuilder: FormBuilder) {
+  // @ts-ignore
+  public deleteTask(index) {
+    this.items.splice(index, 1);
+  }
+
+  constructor(private formBuilder: FormBuilder,
+              private service: TaskService) {
   }
 }

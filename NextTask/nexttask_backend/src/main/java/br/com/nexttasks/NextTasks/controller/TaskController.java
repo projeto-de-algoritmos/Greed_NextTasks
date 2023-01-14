@@ -6,15 +6,23 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("nextTask")
 public class TaskController {
 
-    TaskService taskService;
+    private final TaskService taskService;
+
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
+
     @PostMapping(path = "/processTasks", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> battlePokemon(@RequestBody List<Task> tasks) {
+    public ResponseEntity<?> processTask(@RequestBody List<Task> tasks) {
         try {
             return ResponseEntity.ok(taskService.minimizeLateness(tasks));
         } catch (Exception ex) {
@@ -22,3 +30,4 @@ public class TaskController {
         }
     }
 }
+
