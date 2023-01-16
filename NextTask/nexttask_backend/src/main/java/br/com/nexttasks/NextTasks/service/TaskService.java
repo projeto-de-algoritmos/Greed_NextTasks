@@ -11,15 +11,16 @@ import static java.time.temporal.ChronoUnit.DAYS;
 @Service
 public class TaskService{
 
-    LocalDate currentDate = LocalDate.now();
+    LocalDate currentDate;
 
     public List<Task> minimizeLateness(List<Task> tasks){
+        currentDate = LocalDate.now();
         tasks.sort(new Task());
 
         tasks.forEach(task -> {
             task.setDateStart(currentDate);
             task.setDateFinish(currentDate.plusDays(task.getDaysToComplete()));
-            task.setLateness(DAYS.between(task.getDateFinish(), task.getDeadline()));
+            task.setLateness(DAYS.between(task.getDeadline(), task.getDateFinish()));
 
             currentDate = task.getDateFinish();
         });

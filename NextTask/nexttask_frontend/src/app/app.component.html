@@ -1,68 +1,51 @@
-<div class="container-fluid">
-  <div class="row bg-success justify-content-center
-            align-items-center" style="height:80px">
-    <div class="col-3"></div>
-    <div class="col-6 text-light h2">
+<div class="container-fluid"  style="padding-bottom: 1%">
+  <div class="row bg-success" style="height:80px">
+    <div class="col-6 text-light h2 centro text-center" style="padding-top: 20px">
       NextTask
+      <mat-icon style="transform: scale(1.5)">check_box</mat-icon>
     </div>
   </div>
 
 <form [formGroup]="task">
-  <div class="row mt-1" style="height:80px;">
-    <div class="col-3 d-none col-md-3 d-md-block"></div>
-    <div class="col-12 col-md-6 bg-success d-flex
-					justify-content-center align-items-center
-					text-light h3">
-
-      <div fxLayout="row"
-      fxLayout.lt-sm="column"
-      fxLayoutGap.gt-xs="15px grid">
+  <div class="row mt-1">
+    <div class="h3 texto">
+      <div class="row mt-1" style="height:80px;">
+        <div>Descrição</div>
           <input formControlName="name" type="text"
-                 value="" class="col-7 form-control"
-                 style="width:100px">
-        </div>
+                 value="" class=" form-control">
+      </div>
 
-      <div fxLayout="row"
-      fxLayout.lt-sm="column"
-      fxLayoutGap.gt-xs="15px grid">
-          <input formControlName="deadline" type="date"
-                 value="" class="col-7 form-control"
-                 style="width:100px;">
-        </div>
+      <div class="row mt-1" style="height:80px;">
+        <div>Data de entrega</div>
+        <input formControlName="deadline" type="date"
+                 value="" class=" form-control">
 
-    <div fxLayout="row"
-    fxLayout.lt-sm="column"
-    fxLayoutGap.gt-xs="15px grid">
-          <input formControlName="daysToComplete" type="number"
-                 value="" class="col-7 form-control"
-                 style="width:100px">
-        </div>
+      </div>
+
+    <div class="row mt-1" style="height:80px;">
+      <div>Tempo necessário (em dias)</div>
+      <input formControlName="daysToComplete" type="number"
+                 value="" class="form-control">
+    </div>
+
+    </div>
 
       <button (click)="addToList()"
-              class="btn btn-light text-success">
-        ADD TASK
+              class="btn btn-light text-success row mt-1">
+        ADICIONAR
       </button>
 
-    </div>
-
-    <div class="col-3 d-none col-md-3 d-md-block"></div>
   </div>
 </form>
-  <div *ngFor="let task of items; let index = index;"
-       class="row mt-1" style="height:100px;">
-
-    <div class="col-3 d-none col-md-3 d-md-block"></div>
-
-    <div class="col-12 col-md-6 bg-success d-flex
-                    justify-content-center align-items-center
-                    text-light h3">
-
-      <div class="col-9 text-light h3">{{task.get('name')!.value}}</div>
-
+  <div *ngFor="let result of result$ | async; let index = index;">
+    <div class="col-6 bg-success text-light h3 card-task">
+      <div class="col-9 text-light h3">{{"Tarefa " + (index + 1) + "º | " +result.name}}</div>
+      <div class="col-9 text-light h3">{{getDataEntrega(result.deadline)}}</div>
+      <div class="col-9 text-light h3">{{getDataFim(result.dateFinish)}}</div>
+      <div class="col-9 text-light h3">{{getLatenessMessage(result.lateness)}}</div>
       <input (click)="deleteTask(index)" type="button"
-             value="Delete" class="col-2 btn btn-danger">
+             value="Completa" class="col-2 btn btn-primary centro">
     </div>
-
-    <div class="col-3 d-none col-md-3 d-md-block"></div>
   </div>
 </div>
+

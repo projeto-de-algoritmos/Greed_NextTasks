@@ -1,10 +1,10 @@
 export interface Task {
   "name": string,
-  "deadline": object,
+  "deadline": Date,
   "daysToComplete" : number,
   "dateStart": object,
   "dateFinish": object,
-  "lateness": object
+  "lateness": number
 
 }
 
