@@ -1,4 +1,4 @@
-# NextTask
+# NextTasks
 
 **Número da Lista**: Não se aplica<br>
 **Conteúdo da Disciplina**: Algoritmos Ambiciosos<br>
@@ -16,11 +16,11 @@ O objetivo do NextTask é apresentar uma interface direta e simples de utilizar,
 
 ### Pagina inicial (Campos não preenchidos)
 
-![Campos não preenchidos](assets-readme/imagem-sem-nada-preenchido.png) 
+![Campos não preenchidos](assets-readme/Imagem-sem-nada-preenchido.png) 
 
 ### Pagina inicial (Campos preenchidos)
 
-![Campos preenchidos](assets-readme/imagem-com-campos-preenchidos.png) 
+![Campos preenchidos](assets-readme/Imagem-com-campos-preenchidos.png) 
 
 ### Tela após tarefa adicionada
 
