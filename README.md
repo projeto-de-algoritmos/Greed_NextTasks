@@ -1,4 +1,4 @@
-# PokeBox
+# NextTask
 
 **Número da Lista**: Não se aplica<br>
 **Conteúdo da Disciplina**: Algoritmos Ambiciosos<br>
@@ -10,22 +10,21 @@
 | 18/0145363 |  Yan Andrade de Sena  |
 
 ## Sobre 
-O objetivo do PokeCartesian é apresentar uma interface direta e simples de utilizar, que tem a função de mostrar a menor distância entre dois pokémons. Para isso é utilizado o algoritmo de menor distância entre dois pontos. 
+O objetivo do NextTask é apresentar uma interface direta e simples de utilizar, que tem a função de mostrar uma lista de prioridade conforme as tarefas são cadastradas. Para isso é utilizado o algoritmo ambicioso que vê qual tem a menor data de entrega e a partir disso calcula a prioridade das tarefas. 
 
 ## Screenshots
 
-### Pagina inicial (Sem Seleção)
+### Pagina inicial (Campos não preenchidos)
 
-![Itens não selecionados](assets-readme/pokefind-notselected.png) 
+![Campos não preenchidos](assets-readme/imagem-sem-nada-preenchido.png) 
 
-### Pagina inicial (Area e Pokemon Selecionados)
+### Pagina inicial (Campos preenchidos)
 
-![Pokemons selecionados](assets-readme/pokefind-selected.png) 
+![Campos preenchidos](assets-readme/imagem-com-campos-preenchidos.png) 
 
-### Modal de caminho
+### Tela após tarefa adicionada
 
-![Modal Caminho Inicio](assets-readme/pokefind-modal-1.png) 
-![Modal Caminho Final](assets-readme/pokefind-modal-2.png) 
+![Tarefa adicionada](assets-readme/Imagem-com-tarefa-adicionada.png) 
 
 ## Instalação 
 **Linguagem**: Java, Typescript<br>
@@ -39,7 +38,7 @@ Para rodar o backend (sem IDE) basta acessar o diretório pokegraph_backend e ro
 mvn spring-boot:run 
 ```
 
-Para rodar o backend (com a IDE) instalada basta apertar o botão "▶" no método main da classe ``br.com.pokebox.PokeBoxApplication``.
+Para rodar o backend (com a IDE) instalada basta apertar o botão "▶" no método main da classe ``br.com.nexttasks.NextTasksApplication``.
 
 Para rodar o frontend basta ir no diretório pokegraph_frontend e rodar o comando:
 
@@ -60,7 +59,9 @@ http://localhost:4200
 ```
 
 ## Uso 
-Para a utilizaçao devemos selecionar dois pokémons e em seguida apertar o botão: ``"Go!"``.
+Para a utilizaçao devemos preencher os campos com o nome da tarefa, a data de entrega e o tempo necessário para elaboração da mesma e em seguida apertar o botão: ``"Adicionar"``.
+
+Após isso vai aparecer logo abaixo do formulário todas as tarefas
 
 ## Outros 
 
